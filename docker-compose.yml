@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  brain-dot-fr:
+    image: bletan/brain-dot-fr
+    command: -m /model/fr.brain.experimental-7b-Q4_K_M.gguf --nobrowser
+    volumes:
+      - ./model/fr.brain.experimental-7b-Q4_K_M.gguf:/model/fr.brain.experimental-7b-Q4_K_M.gguf
+    ports:
+      - "8080:8080"
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
